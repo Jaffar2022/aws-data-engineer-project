@@ -1,3 +1,5 @@
+# This script downloads all Parquet files from the specified S3 bucket and prefix to a local directory.
+
 import boto3
 import os
 

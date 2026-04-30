@@ -1,11 +1,16 @@
+# Program to upload all local sales data files to S3 and verify the upload
+
 import os
 import boto3
 from botocore.exceptions import NoCredentialsError, ClientError
 
 # ====== CONFIG ======
-LOCAL_FOLDER = "../data"   # change to your local folder
+# ====== CONFIG ======
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOCAL_FOLDER = os.path.join(BASE_DIR, "..", "data")
+
 BUCKET_NAME = "awsdeprojects"
-S3_PREFIX = "sales-data/year=2026/month=05/"  # must end with /
+S3_PREFIX = "raw/sales/"
 
 # ====================
 
