@@ -1,6 +1,6 @@
 order_id,product,category,amount,order_date
 1,Laptop,Electronics,50000,2024-01-01
-2,Phone,Electronics,20000,2024-01-01
+2,Phone,Electronics,,2024-01-01
 3,Shoes,Fashion,3000,2024-01-02
-4,T-shirt,Fashion,1500,2024-01-02
+4,T-shirt,Fashion,1500,
 5,Laptop,Electronics,55000,2024-01-03
