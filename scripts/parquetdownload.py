@@ -5,7 +5,10 @@ s3 = boto3.client("s3")
 
 BUCKET = "awsdeprojects"
 PREFIX = "processed/sales/"
-LOCAL_BASE = "./parquet_downloads"
+
+# 👉 Save outside scripts folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOCAL_BASE = os.path.join(BASE_DIR, "..", "parquet_downloads")
 
 def download_files():
     paginator = s3.get_paginator("list_objects_v2")
@@ -22,7 +25,9 @@ def download_files():
 
                 os.makedirs(os.path.dirname(local_path), exist_ok=True)
 
-                print(f"Downloading {key}")
+                print(f"⬇️ Downloading {key}")
                 s3.download_file(BUCKET, key, local_path)
+
+    print("✅ Download completed")
 
 download_files()
